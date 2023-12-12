@@ -36,12 +36,14 @@ def collate_fn(batch):
 
 def main():
     tqdm.pandas()
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print("########################### PREPROCESSING ########################")
     # Data Preprocessing
     medical_data = pd.read_json("datasets/final.json")
     medical_data['combined'] = "Question : " + medical_data['question'] + " Answer : " + medical_data['answer']
     medical_data['word_count'] = medical_data['combined'].progress_apply(word_count)
     medical_data = medical_data[medical_data['word_count'] < 1020]
-
+    print("########################### TOKENIZATION ########################")
     # Splitting the dataframe
     train_med, test_med = train_test_split(medical_data, test_size=0.2)
     val_med, test_med = train_test_split(test_med, test_size=0.5)
@@ -59,20 +61,22 @@ def main():
 
 
     # Initialize the model
-    model = AutoModelForCausalLM.from_pretrained("microsoft/biogpt")
+    model = AutoModelForCausalLM.from_pretrained("microsoft/biogpt").to(device)
 
     # Training Arguments and Trainer Initialization
     training_args = TrainingArguments(
         output_dir='./results',
         num_train_epochs=3,
-        per_device_train_batch_size=16,
-        per_device_eval_batch_size=16,
-        warmup_steps=500,
+        per_device_train_batch_size=32,
+        per_device_eval_batch_size=32,
+        warmup_steps=6000,
         weight_decay=0.01,
+        learning_rate= 1e-4,
+        gradient_accumulation_steps=2,
         logging_dir='./logs',
-        logging_steps=10,
+        logging_steps=1000,
         evaluation_strategy="steps",
-        save_steps=10,
+        save_steps=8000,
         load_best_model_at_end=True
     )
 
