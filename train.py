@@ -66,13 +66,12 @@ def main():
     # Training Arguments and Trainer Initialization
     training_args = TrainingArguments(
         output_dir='./results',
-        num_train_epochs=3,
-        per_device_train_batch_size=32,
-        per_device_eval_batch_size=32,
+        num_train_epochs=2,
+        per_device_train_batch_size=1,
+        per_device_eval_batch_size=1,
         warmup_steps=6000,
         weight_decay=0.01,
         learning_rate= 1e-4,
-        gradient_accumulation_steps=2,
         logging_dir='./logs',
         logging_steps=1000,
         evaluation_strategy="steps",
