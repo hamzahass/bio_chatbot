@@ -17,19 +17,19 @@ def merge_datasets(folder_path, output_filename):
     with open(output_path, 'w', encoding='utf-8') as json_file:
         json.dump(merged_data, json_file, ensure_ascii=False, indent=2)
 
-# if __name__ == "__main__":
-#     folder_path = "../data/processed"
-#     output_filename = "final_qa_dataset.json"
-#     merge_datasets(folder_path, output_filename)
-
-def count_entries(output_file):
-    with open(output_file, 'r', encoding='utf-8') as json_file:
-        data = json.load(json_file)
-        return len(data)
-
 if __name__ == "__main__":
-    output_file = "../data/processed/final_qa_dataset.json"
+    folder_path = "../data/processed"
+    output_filename = "final_qa_dataset.json"
+    merge_datasets(folder_path, output_filename)
 
-    num_entries = count_entries(output_file)
+# def count_entries(output_file):
+#     with open(output_file, 'r', encoding='utf-8') as json_file:
+#         data = json.load(json_file)
+#         return len(data)
 
-    print(f"Number of entries in {output_file}: {num_entries}")
+# if __name__ == "__main__":
+#     output_file = "../data/processed/final_qa_dataset.json"
+
+#     num_entries = count_entries(output_file)
+
+#     print(f"Number of entries in {output_file}: {num_entries}")

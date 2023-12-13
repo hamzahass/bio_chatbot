@@ -1,5 +1,14 @@
 import json
 
+def generate_prompt(data_point):
+    # taken from https://github.com/tloen/alpaca-lora
+    return f""" Below is a medical question below, provide an answer to it.
+    ### Question :
+    {data_point["question"]}
+
+    ### Answer :
+    {data_point["answer"]}"""
+
 def extract_question_answer(dataset):
     extracted_data = []
 
