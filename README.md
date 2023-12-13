@@ -10,6 +10,9 @@ To optimize the training process, we employed Low-Rank Adaptation (LoRA), a meth
 
 However, due to the immense size of models like Meditron 7B and our limited hardware resources, we opted for a vector database approach. This database stores the embeddings of contexts and can retrieve the most relevant one for given queries, and then inputting this information into the LLM. This method utilizes the LLM's ability to understand and generate language based on the provided context, offering a practical way to customize responses or analyses without extensive retraining. Our project aims to set a new standard in the application of LLMs for medical purposes, enhancing the diagnostic capabilities of healthcare professionals.
 
+### Finetuned BioGPT model
+
+- The finetuned biogpt model weights can be found in the following [link](https://drive.google.com/drive/folders/1HcSKKDCeX39b-6rsfZs3iSaAsiK0WHGB)
 
 ### Data
 
