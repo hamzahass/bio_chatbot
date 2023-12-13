@@ -13,4 +13,4 @@ However, due to the immense size of models like Meditron 7B and our limited hard
 
 ### Data
 
-The data can be accesses through the following [link](https://drive.google.com/drive/folders/1C9xZqJB2pIShfn62ArqRMf_A0i0zqZZB?usp=sharing) (google drive). The downloaded data folder can replace the one in the repo.
+The data can be accesses through the following [link](https://drive.google.com/drive/folders/1C9xZqJB2pIShfn62ArqRMf_A0i0zqZZB?usp=sharing) (google drive). The downloaded data folder can be placed into the root of our repo.
