@@ -1,0 +1,24 @@
+import json
+
+def extract_question_answer(dataset):
+    extracted_data = []
+
+    for entry_id, entry_data in dataset.items():
+        context = entry_data["CONTEXTS"][0]
+
+        extracted_data.append({"context": context})
+
+    return extracted_data
+
+def main():
+    with open("../data/pubmed_qa/ori_pqaa.json", 'r', encoding='utf-8') as json_file:
+        dataset = json.load(json_file)
+
+    extracted_data = extract_question_answer(dataset)
+
+    # Save the extracted data to a new JSON file
+    with open("../data/processed/pubmed_qaa_context.json", 'w', encoding='utf-8') as json_file:
+        json.dump(extracted_data, json_file, ensure_ascii=False, indent=2)
+
+if __name__ == "__main__":
+    main()
