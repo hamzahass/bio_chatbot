@@ -13,4 +13,10 @@ However, due to the immense size of models like Meditron 7B and our limited hard
 
 ### Data
 
-The data can be accesses through the following [link](https://drive.google.com/drive/folders/1C9xZqJB2pIShfn62ArqRMf_A0i0zqZZB?usp=sharing) (google drive). The downloaded data folder can be placed into the root of our repo.
+The data can be accesses through the following [link](https://drive.google.com/drive/folders/1C9xZqJB2pIShfn62ArqRMf_A0i0zqZZB?usp=sharing) (google drive). The downloaded data folder can be placed into the root of our repo. 
+
+Furthermore the initial datasets can be found :
+
+- https://github.com/pubmedqa/pubmedqa
+- https://github.com/abachaa/MedQuAD
+- http://participants-area.bioasq.org/datasets/
