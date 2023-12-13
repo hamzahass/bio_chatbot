@@ -1,4 +1,4 @@
-# bio_chatbot
+# Advancing Medical Diagnostics: A Dual Approach with Fine-Tuning and Retrieval Augmented Generation in Large Language Models
 
 This project investigates the innovative application of Large Language Models (LLMs) in the realm of medical knowledge extraction and diagnosis. 
 
